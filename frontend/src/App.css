@@ -1,0 +1,317 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+  background: #f4f6f8;
+  color: #1f2937;
+}
+
+.app {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  margin-bottom: 12px;
+  font-size: 2.5rem;
+}
+
+.hero p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+
+/* ============================================================
+   ANALYZER FORM
+   ============================================================ */
+
+.analyzer-card {
+  background: white;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow:
+    0 8px 25px
+    rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form-group input {
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-group textarea:focus,
+.form-group input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.file-name {
+  color: #2563eb;
+  margin-bottom: 0;
+}
+
+
+/* ============================================================
+   BUTTON
+   ============================================================ */
+
+.analyze-button {
+  width: 100%;
+  padding: 15px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.analyze-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.analyze-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+
+/* ============================================================
+   ERROR
+   ============================================================ */
+
+.error-message {
+  margin-bottom: 20px;
+  padding: 12px;
+
+  background: #fee2e2;
+  color: #b91c1c;
+
+  border-radius: 8px;
+}
+
+
+/* ============================================================
+   RESULTS
+   ============================================================ */
+
+.results {
+  margin-top: 45px;
+}
+
+.results > h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+
+/* ============================================================
+   SCORE CARD
+   ============================================================ */
+
+.score-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 35px;
+  margin-bottom: 25px;
+
+  background: white;
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 0, 0, 0.08);
+}
+
+.score-card span {
+  color: #6b7280;
+  font-size: 1.1rem;
+}
+
+.score-card strong {
+  margin-top: 10px;
+  font-size: 4rem;
+  color: #2563eb;
+}
+
+.score-card small {
+  font-size: 1.5rem;
+  color: #6b7280;
+}
+
+
+/* ============================================================
+   RESULTS GRID
+   ============================================================ */
+
+.results-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.result-card {
+  background: white;
+  padding: 25px;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 25px
+    rgba(0, 0, 0, 0.08);
+}
+
+.result-card h3 {
+  margin-top: 0;
+}
+
+.result-card ul {
+  padding-left: 20px;
+}
+
+.result-card li {
+  margin-bottom: 10px;
+}
+
+
+/* ============================================================
+   REQUIREMENTS
+   ============================================================ */
+
+.requirements-list {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 15px;
+}
+
+.requirement {
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 5px solid;
+}
+
+.requirement p {
+  margin-bottom: 0;
+  color: #6b7280;
+}
+
+
+/* EXACT */
+
+.requirement.exact {
+  background: #dcfce7;
+  border-color: #16a34a;
+}
+
+
+/* RELATED */
+
+.requirement.related {
+  background: #fef3c7;
+  border-color: #d97706;
+}
+
+
+/* MISSING */
+
+.requirement.missing {
+  background: #fee2e2;
+  border-color: #dc2626;
+}
+
+
+/* WEAK */
+
+.requirement.weak {
+  background: #e0e7ff;
+  border-color: #6366f1;
+}
+
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+  .app {
+    width: 92%;
+    padding: 30px 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .analyzer-card {
+    padding: 20px;
+  }
+
+  .results-grid,
+  .requirements-list {
+    grid-template-columns: 1fr;
+  }
+
+  .score-card strong {
+    font-size: 3rem;
+  }
+}
