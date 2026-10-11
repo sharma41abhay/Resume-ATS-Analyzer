@@ -271,6 +271,6 @@ The backend API, resume parsing pipeline, ATS analysis, semantic matching, autom
 
 ## Author
 
-**Abhay Sharma**
+**Abhay Sharma & Chaahit Sharma**
 
 GitHub: https://github.com/sharma41abhay
